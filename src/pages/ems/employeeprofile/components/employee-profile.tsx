@@ -90,8 +90,7 @@ export default function EmployeeProfile({
                   )}
                 </div>
                 <h2 className='mb-1 text-2xl font-bold'>
-                  {employeeProfile?.first_name} {employeeProfile?.last_name} (
-                  {employeeProfile?.employee_id})
+                  {employeeProfile?.first_name} {employeeProfile?.last_name} 
                 </h2>
                 <p className='mb-4 text-sm text-muted-foreground'>
                   {employeeProfile?.designation_name}

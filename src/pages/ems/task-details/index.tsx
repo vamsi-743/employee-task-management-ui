@@ -228,7 +228,7 @@ export default function TaskDetails() {
 
   const getStatusIcon = (status: string) => {
     switch (status) {
-      case 'Completed':
+      case 'completed':
         return <CheckCircle className='h-4 w-4 text-green-500' />
       case 'In Progress':
         return <Clock className='h-4 w-4 text-yellow-500' />

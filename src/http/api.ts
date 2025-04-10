@@ -116,6 +116,9 @@ export const emsGetEmployeeById = (employee_id: string, data: any) => api.post(`
 export const updateEmsEmployee = (employeeId: string, data: any) =>
   api.put(`/update_ems_employee/${employeeId}`, data)
 
+export const deleteEmsEmployee = (employeeId: string) =>
+  api.delete(`/delete_ems_employee/${employeeId}`)
+
 export const emsCreateProject = (data: any) =>
   api.post('/create_ems_project', data)
 export const emsGetAllProjects = (data: any) => api.post('/ems_projects', data)

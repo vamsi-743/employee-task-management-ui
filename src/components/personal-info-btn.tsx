@@ -33,7 +33,7 @@ import {
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useToast } from './ui/use-toast'
 import { useAuth } from '@/hooks/use-auth'
-import { updateEmployee } from '@/http/api'
+import { updateEmsEmployee } from '@/http/api'
 import { DatePicker } from './date-picker'
 import { differenceInYears } from 'date-fns'
 import { Button } from './custom/button'
@@ -112,7 +112,8 @@ export default function PersonalInfoBtn({ employeeProfile }: any) {
 
   const mutation = useMutation({
     mutationFn: ({ employeeId, data }: { employeeId: string; data: any }) =>
-      updateEmployee(employeeId, data),
+      // console.log(employeeId);
+    updateEmsEmployee(employeeId, data),
     onSuccess: () => {
       toast({
         title: 'Employee updated successfully',
@@ -139,7 +140,7 @@ export default function PersonalInfoBtn({ employeeProfile }: any) {
   })
 
   const onSubmit = (data: any) => {
-    mutation.mutate({ employeeId: employeeProfile.employee_id, data: data })
+    mutation.mutate({ employeeId: employeeProfile.EMS_employee_id, data: data })
     setOpen(false)
   }
 

@@ -47,14 +47,24 @@ export function DatePicker({
         <Calendar
           mode="single"
           selected={date}
-          onSelect={(date) => {
-            console.log('Selected date:', date); // Add this line to debug
-            setDate(date);
-            onSelect(date);
-          }}
+          onSelect={(selectedDate) => {
+            if (!selectedDate) return;
+          
+            // Normalize to noon to avoid timezone shifting issues
+            const normalizedDate = new Date(
+              selectedDate.getFullYear(),
+              selectedDate.getMonth(),
+              selectedDate.getDate(),
+              12, 0, 0 // Set time to 12:00 PM
+            );
+          
+            console.log('Selected date (normalized):', normalizedDate);
+            setDate(normalizedDate);
+            onSelect(normalizedDate);
+          }}          
           autoFocus
-          startMonth={new Date(1999, 11)}
-          endMonth={new Date(2025, 2)}
+          startMonth={new Date(1950, 1)}
+          endMonth={new Date(3000, 1)}
         />
       </PopoverContent>
     </Popover>

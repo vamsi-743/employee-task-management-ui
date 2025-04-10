@@ -16,7 +16,7 @@ import {
 } from '@/components/ui/dialog'
 import { MoreHorizontal, UserMinus, UserX } from 'lucide-react'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { deleteEmployee, employeeExit } from '@/http/api'
+import { deleteEmsEmployee, employeeExit } from '@/http/api'
 import { useToast } from '@/components/ui/use-toast'
 import { Button } from '@/components/custom/button'
 import { useNavigate } from 'react-router-dom'
@@ -59,7 +59,7 @@ export default function EmployeeActionBtn({
     },
   })
   const deleteMutation = useMutation({
-    mutationFn: () => deleteEmployee(employeeId),
+    mutationFn: () => deleteEmsEmployee(employeeId),
     onSuccess: () => {
       toast({
         title: 'Employee deleted successfully',

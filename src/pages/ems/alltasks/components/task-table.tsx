@@ -91,7 +91,7 @@ export default function TaskTable({ tasksList }: { tasksList: any }) {
       cell: ({ row }) => format(new Date(row.getValue('due_date')), 'PP'),
     },
     {
-      accessorKey: 'EMS_project.name',
+      accessorKey: 'project_name',
       header: 'Project',
     },
     {
